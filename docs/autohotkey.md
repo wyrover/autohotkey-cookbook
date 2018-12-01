@@ -4,6 +4,17 @@
 - ControlClick     客户区坐标
 - TreeView 控件可用 Acc 访问，并发送 ControlSend 相关的快捷键来移动控件, 比点击树控件坐标好使 
 
+## 切换 tab
+
+``` js	
+SendMessage, 0x1330, 2,, SysTabControl322	 ; 0x1330 is TCM_SETCURFOCUS
+sleep, 0
+SendMessage, 0x130C, 2,, SysTabControl322  ; 0x130C is TCM_SETCURSEL			
+```
+
+如不行，就用 ControlClick 点击客户区
+
+
 ## 文华函数导出
 
 ```js
