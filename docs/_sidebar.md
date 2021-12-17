@@ -1,2 +1,7 @@
 - [AutoHotKey](autohotkey.md)
 - [AutoHotKey 在线手册](https://autohotkey.com/docs/AutoHotkey.htm)
+- [AutoHotKey 的数据结构](https://www.autohotkey.com/docs/Objects.htm#Usage_Simple_Arrays)
+- [jeeswg 的 RegEx 教程（RegExMatch，RegExReplace）](https://www.autohotkey.com/boards/viewtopic.php?f=7&t=28031)
+- [jeeswg's dates tutorial](https://www.autohotkey.com/boards/viewtopic.php?f=7&t=65544)
+- [jeeswg's DllCall and structs tutorial](https://www.autohotkey.com/boards/viewtopic.php?f=7&t=63708)
+- [Windows Data Type Sizes - DllCall() / NumGet() / NumPut()](https://www.autohotkey.com/boards/viewtopic.php?f=7&t=79797)
