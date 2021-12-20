@@ -30,6 +30,53 @@ else if A_PtrSize = 8 {
 }
 ```
 
+```js
+SetSystemTime(Year := 1601, Month := 1, DayOfWeek := 0, Day := 1, Hour := 0, Minute := 0, Second := 0, Milliseconds := 0)
+{
+    static VarSetCapacity(SYSTEMTIME, 16)
+    , NumPut(Year,      SYSTEMTIME,  0, "UShort"), NumPut(Month,        SYSTEMTIME,  2, "UShort")
+    , NumPut(DayOfWeek, SYSTEMTIME,  4, "UShort"), NumPut(Day,          SYSTEMTIME,  6, "UShort")
+    , NumPut(Hour,      SYSTEMTIME,  8, "UShort"), NumPut(Minute,       SYSTEMTIME, 10, "UShort")
+    , NumPut(Second,    SYSTEMTIME, 12, "UShort"), NumPut(Milliseconds, SYSTEMTIME, 14, "UShort")
+    if !(DllCall("kernel32.dll\SetSystemTime", "Ptr", &SYSTEMTIME))
+        return DllCall("kernel32.dll\GetLastError")
+    return 1
+}
+; ===============================================================================================================================
+
+SetSystemTime(2015, 1, 25, 7, 13, 37, 27, 724)
+```
+
+
+```js
+GetSystemTime()
+{
+    static SYSTEMTIME, init := VarSetCapacity(SYSTEMTIME, 16, 0) && NumPut(16, SYSTEMTIME, "UShort")
+    DllCall("kernel32.dll\GetSystemTime", "Ptr", &SYSTEMTIME, "Ptr")
+    return { 1 : NumGet(SYSTEMTIME,  0, "UShort"), 2 : NumGet(SYSTEMTIME,  2, "UShort")
+           , 3 : NumGet(SYSTEMTIME,  4, "UShort"), 4 : NumGet(SYSTEMTIME,  6, "UShort")
+           , 5 : NumGet(SYSTEMTIME,  8, "UShort"), 6 : NumGet(SYSTEMTIME, 10, "UShort")
+           , 7 : NumGet(SYSTEMTIME, 12, "UShort"), 8 : NumGet(SYSTEMTIME, 14, "UShort") }
+}
+; ===============================================================================================================================
+
+GetSystemTime := GetSystemTime()
+
+MsgBox % "GetSystemTime function`n"
+       . "SYSTEMTIME structure`n`n"
+       . "wYear:`t`t"                GetSystemTime[1]   "`n"
+       . "wMonth:`t`t"               GetSystemTime[2]   "`n"
+       . "wDayOfWeek:`t"             GetSystemTime[3]   "`n"
+       . "wDay:`t`t"                 GetSystemTime[4]   "`n"
+       . "wHour:`t`t"                GetSystemTime[5]   "`n"
+       . "wMinute:`t`t"              GetSystemTime[6]   "`n"
+       . "wSecond:`t`t"              GetSystemTime[7]   "`n"
+       . "wMilliseconds:`t"          GetSystemTime[8]
+
+```
+
+
+
 ## 类型大小
 https://www.autohotkey.com/boards/viewtopic.php?t=79797
 

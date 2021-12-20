@@ -1,5 +1,6 @@
 - [AutoHotKey](autohotkey.md)
 - [AutoHotKey 的 Struct 和 DllCall](dllcall_struct.md)
+- [AUtoHotkey 的数组和对象](array_object.md)
 - [AutoHotKey 在线手册](https://autohotkey.com/docs/AutoHotkey.htm)
 - [AutoHotKey 的数据结构](https://www.autohotkey.com/docs/Objects.htm#Usage_Simple_Arrays)
 - [jeeswg 的 RegEx 教程（RegExMatch，RegExReplace）](https://www.autohotkey.com/boards/viewtopic.php?f=7&t=28031)
